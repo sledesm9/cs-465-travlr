@@ -4,14 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// UPDATED PATHS (routes now live in app_server)
+// UPDATED PATHS 
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 
 var app = express();
 
 // view engine setup
-// UPDATED PATH (views now live in app_server)
+// UPDATED PATH 
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'hbs');
 
@@ -20,14 +20,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// public folder stays where it is
+// public folder 
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-// catch 404 and forward to error handler
+// forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
