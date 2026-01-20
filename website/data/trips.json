@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Gale Reef",
+    "image": "images/reef1.jpg",
+    "description": "Gale Reef - A relaxing dive spot known for its clear water and colorful coral reefs.",
+    "details": "This location is perfect for beginners and casual divers who want an easy, enjoyable dive with plenty of marine life to see."
+  },
+  {
+    "name": "Dawson’s Reef",
+    "image": "images/reef2.jpg",
+    "description": "Dawson’s Reef - A more adventurous dive site with deeper waters and stronger currents.",
+    "details": "This reef is best suited for experienced divers who enjoy a challenge and want to explore a wide variety of underwater scenery."
+  },
+  {
+    "name": "Claire’s REEF",
+    "image": "images/reef3.jpg",
+    "description": "Claire’s REEF - A peaceful reef surrounded by rock formations and schools of tropical fish.",
+    "details": "It’s a great choice for divers who prefer a slower pace, scenic views, and opportunities for underwater photography."
+  }
+]
