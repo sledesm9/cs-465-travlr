@@ -1,0 +1,55 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3 class="m-0">Add New Trip</h3>
+  <a class="btn btn-outline-secondary" routerLink="/">Back</a>
+</div>
+
+<div class="alert alert-danger" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+<form class="row g-3" [formGroup]="form" (ngSubmit)="save()">
+  <div class="col-md-3">
+    <label class="form-label">Code</label>
+    <input class="form-control" formControlName="code" placeholder="GR01" />
+  </div>
+
+  <div class="col-md-9">
+    <label class="form-label">Name</label>
+    <input class="form-control" formControlName="name" placeholder="Gale Reef" />
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Length</label>
+    <input class="form-control" formControlName="length" placeholder="4 nights / 5 days" />
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Start (YYYY-MM-DD)</label>
+    <input class="form-control" formControlName="start" placeholder="2026-02-15" />
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Per Person</label>
+    <input class="form-control" formControlName="perPerson" placeholder="799" />
+  </div>
+
+  <div class="col-md-6">
+    <label class="form-label">Resort</label>
+    <input class="form-control" formControlName="resort" placeholder="Coral Sands Resort" />
+  </div>
+
+  <div class="col-md-6">
+    <label class="form-label">Image</label>
+    <input class="form-control" formControlName="image" placeholder="images/reef1.jpg" />
+  </div>
+
+  <div class="col-12">
+    <label class="form-label">Description</label>
+    <textarea class="form-control" rows="3" formControlName="description"></textarea>
+  </div>
+
+  <div class="col-12 d-flex gap-2">
+    <button class="btn btn-success" type="submit" [disabled]="saving">
+      {{ saving ? 'Saving...' : 'Save Trip' }}
+    </button>
+    <a class="btn btn-secondary" routerLink="/">Cancel</a>
+  </div>
+</form>

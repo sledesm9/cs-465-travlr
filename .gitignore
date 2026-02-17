@@ -3,3 +3,14 @@ dist/
 .env
 .DS_Store
 travlr.zip
+
+# Angular / build cache
+.angular/
+dist/
+node_modules/
+
+# macOS
+.DS_Store
+
+# zips
+*.zip
