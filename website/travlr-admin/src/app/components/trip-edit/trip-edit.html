@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3 class="m-0">Edit Trip</h3>
+  <a class="btn btn-outline-secondary" routerLink="/">Back</a>
+</div>
+
+<div class="alert alert-info" *ngIf="loading">Loading trip...</div>
+<div class="alert alert-danger" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+<form class="row g-3" *ngIf="!loading" [formGroup]="form" (ngSubmit)="save()">
+
+  <div class="col-md-3">
+    <label class="form-label">Code</label>
+    <input class="form-control" formControlName="code" readonly />
+  </div>
+
+  <div class="col-md-9">
+    <label class="form-label">Name</label>
+    <input class="form-control" formControlName="name" />
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Length</label>
+    <input class="form-control" formControlName="length" />
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Start</label>
+    <input class="form-control" formControlName="start" />
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Per Person</label>
+    <input class="form-control" formControlName="perPerson" />
+  </div>
+
+  <div class="col-md-6">
+    <label class="form-label">Resort</label>
+    <input class="form-control" formControlName="resort" />
+  </div>
+
+  <div class="col-md-6">
+    <label class="form-label">Image</label>
+    <input class="form-control" formControlName="image" />
+  </div>
+
+  <div class="col-12">
+    <label class="form-label">Description</label>
+    <textarea class="form-control" rows="3" formControlName="description"></textarea>
+  </div>
+
+  <div class="col-12 d-flex gap-2">
+    <button class="btn btn-primary" type="submit" [disabled]="saving">
+      {{ saving ? 'Saving...' : 'Update Trip' }}
+    </button>
+    <a class="btn btn-secondary" routerLink="/">Cancel</a>
+  </div>
+
+</form>

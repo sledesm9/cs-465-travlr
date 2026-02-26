@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 // Local MongoDB
 const dbURI = 'mongodb://127.0.0.1/travlr';
 
@@ -26,3 +25,4 @@ process.on('SIGINT', () => {
 
 // Register models
 require('./trips');
+require('./users');

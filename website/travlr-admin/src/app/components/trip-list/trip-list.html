@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="m-0">Trips</h2>
+  <button class="btn btn-outline-secondary btn-sm" (click)="logout()">Logout</button>
+</div>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h4 class="m-0">Trips</h4>
+  <a class="btn btn-success" routerLink="/add">+ Add Trip</a>
+</div>
+
+<div class="alert alert-info" *ngIf="loading">Loading trips...</div>
+<div class="alert alert-danger" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+<div class="row g-3" *ngIf="!loading && !errorMsg">
+  <div class="col-md-4" *ngFor="let t of trips">
+    <app-trip-card
+      [trip]="t"
+      (edit)="goEdit($event)"
+      (remove)="deleteTrip($event)">
+    </app-trip-card>
+  </div>
+</div>
